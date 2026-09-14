@@ -1,0 +1,1806 @@
+# Build a Full-Fledged BioNature India React Website
+
+## 1. PROJECT OVERVIEW
+
+Build a production-ready, modern, responsive website for **BioNature India**, an agricultural products company focused on sustainable farming, bio-fertilizers, bio-pesticides, plant nutrition, crop-care products, and agricultural solutions.
+
+Reference website:
+https://bionatureindia.com/
+
+The new website should be a **complete redesign**, not a direct copy of the existing website.
+
+The goal is to create a premium agricultural brand website that is:
+
+* Modern
+* Professional
+* Trustworthy
+* Fast
+* Mobile-first
+* SEO-friendly
+* Conversion-focused
+* Easy to maintain
+* Accessible
+* Scalable
+* Fully functional
+* Suitable for farmers, dealers, distributors, retailers, agricultural professionals, and B2B customers.
+
+Do NOT create a static mockup.
+
+Every important interaction, button, form, search function, filter, navigation element, product page, contact workflow, and farmer-support workflow must actually work.
+
+---
+
+# 2. TECHNOLOGY STACK
+
+Use the following stack:
+
+### Frontend
+
+* React
+* TypeScript
+* Vite
+* React Router
+* Tailwind CSS
+* shadcn/ui where useful
+* Lucide React icons
+
+### State Management
+
+Use React state/hooks for simple state.
+
+Use Zustand only where global state is genuinely useful.
+
+### Forms
+
+Use:
+
+* React Hook Form
+* Zod validation
+
+### Backend
+
+Create a proper backend API.
+
+Preferred:
+
+* Node.js
+* Express
+* TypeScript
+
+### Database
+
+Use:
+
+* PostgreSQL
+
+Use Prisma ORM.
+
+### Authentication
+
+Implement authentication for the admin dashboard.
+
+Use secure password hashing and HTTP-only authentication cookies or another secure authentication mechanism.
+
+Admin roles:
+
+* Super Admin
+* Product Manager
+* Content Manager
+* Support Manager
+
+### File Storage
+
+Structure the application so product images, certificates, farmer images, PDFs and other assets can be stored using cloud/object storage.
+
+For local development, allow local uploads.
+
+### Email
+
+Create an email service abstraction.
+
+Support:
+
+* SMTP
+* Resend or similar transactional email provider
+
+Do not hard-code API keys.
+
+### Deployment
+
+Make the project deployment-ready for:
+
+* Vercel / Netlify for frontend
+* Railway / Render / AWS / similar for backend
+* PostgreSQL cloud database
+
+Use environment variables.
+
+---
+
+# 3. DESIGN DIRECTION
+
+Create a premium agricultural visual identity.
+
+The design should communicate:
+
+**Nature + Science + Agriculture + Trust + Innovation**
+
+Avoid making the site look like an outdated fertilizer-company template.
+
+Use:
+
+* Natural greens
+* White
+* Earth-inspired neutral tones
+* Subtle organic shapes
+* High-quality crop photography
+* Product photography
+* Clean typography
+* Large visual sections
+* Soft shadows
+* Rounded cards
+* Modern icons
+* Subtle animations
+
+Do NOT overuse:
+
+* Gradients
+* Excessive animations
+* Huge text
+* Generic stock imagery
+* Excessive rounded elements
+* Random decorative graphics
+
+The website should look like a serious agricultural technology/biological solutions company.
+
+---
+
+# 4. RESPONSIVE DESIGN
+
+The entire website must work perfectly on:
+
+* Mobile
+* Tablet
+* Laptop
+* Desktop
+* Large desktop displays
+
+Breakpoints should be carefully designed.
+
+Mobile navigation must have a proper hamburger menu.
+
+Forms must be easy to use on mobile.
+
+Buttons should have adequate touch targets.
+
+Images must be optimized and responsive.
+
+---
+
+# 5. MAIN WEBSITE STRUCTURE
+
+Create the following pages:
+
+## Public Pages
+
+1. Home
+2. About Us
+3. Products
+4. Product Details
+5. Solutions
+6. Crop Solutions
+7. Problem Solutions
+8. Farmer Help Center
+9. Farmer Crop Diagnosis
+10. Become a Distributor
+11. Infrastructure
+12. Quality & Certifications
+13. Awards
+14. Testimonials
+15. Blog
+16. Blog Details
+17. Resources
+18. Downloads
+19. Gallery
+20. Videos
+21. Contact Us
+22. Search Results
+23. Privacy Policy
+24. Terms & Conditions
+25. Disclaimer
+26. 404 Page
+
+---
+
+# 6. HEADER
+
+Create a professional sticky header.
+
+Desktop:
+
+Logo | Products | Solutions | Farmer Help | About | Resources | Contact
+
+Right side:
+
+* Search icon
+* WhatsApp button
+* Contact/Enquiry CTA
+
+Header should shrink slightly when scrolling.
+
+Mobile:
+
+Logo
+Menu button
+
+Inside mobile menu:
+
+* Home
+* Products
+* Solutions
+* Farmer Help
+* About
+* Resources
+* Contact
+* WhatsApp
+* Enquire Now
+
+---
+
+# 7. HOMEPAGE
+
+Create a high-converting homepage.
+
+## HERO
+
+Large agricultural image/video background.
+
+Headline:
+
+"Sustainable Agricultural Solutions for Better Crop Growth"
+
+Subheadline:
+
+"BioNature develops bio-fertilizers, crop protection, plant nutrition and sustainable farming solutions that help farmers grow healthier crops and improve productivity."
+
+Buttons:
+
+[Explore Products]
+
+[Talk to an Agriculture Expert]
+
+Add a trust strip:
+
+* 12K+ Farmers Supported
+* 20K+ Hectares
+* Quality-Assured Products
+* Sustainable Farming Solutions
+
+Use the actual verified company statistics where available.
+
+Do not invent statistics.
+
+---
+
+# 8. TRUST SECTION
+
+Create:
+
+## Why Farmers Choose BioNature
+
+Cards:
+
+* Quality
+* Innovation
+* Sustainable Solutions
+* Technical Expertise
+* Farmer Support
+* Reliable Products
+
+Use icons and short descriptions.
+
+---
+
+# 9. PRODUCT CATEGORIES
+
+Create a beautiful product category section.
+
+Categories:
+
+* Bio Fertilizers
+* Bio Pesticides
+* Bio Fungicides
+* Plant Nutrition
+* Micronutrients
+* Plant Growth Promoters
+* Soil Health
+* Crop Protection
+* Seaweed Products
+* Specialty Agricultural Solutions
+
+Each category should be clickable.
+
+---
+
+# 10. PRODUCT SYSTEM
+
+Build a complete product system.
+
+## Products Listing
+
+Features:
+
+* Search
+* Category filter
+* Crop filter
+* Problem filter
+* Product type filter
+* Sort
+* Pagination
+* Product cards
+
+Product card should show:
+
+* Product image
+* Product name
+* Category
+* Short description
+* Key benefit
+* Suitable crops
+* View Details
+* Enquire
+
+---
+
+# 11. PRODUCT DETAIL PAGE
+
+Every product needs a professional detail page.
+
+Structure:
+
+Product image
+
+Product name
+
+Category
+
+Short description
+
+Key benefits
+
+### Suitable Crops
+
+Show crop cards.
+
+### Key Ingredients
+
+Display ingredients/nutrients/biological components based on actual product information.
+
+### Target Problems
+
+Show what agricultural problem the product addresses.
+
+### Application
+
+Show:
+
+* Method
+* Timing
+* Dosage
+* Frequency
+
+Only display verified information.
+
+Do not invent technical specifications.
+
+### Available Pack Sizes
+
+Display actual available sizes.
+
+### Technical Documents
+
+Buttons:
+
+* Download Product Brochure
+* Download Technical Sheet
+* Download Label
+
+### Enquiry
+
+"Interested in this product?"
+
+Form:
+
+Name
+Mobile
+Email
+State
+District
+Crop
+Message
+
+Submit Enquiry
+
+---
+
+# 12. PRODUCT SEARCH
+
+Create a global product search.
+
+Search should support:
+
+* Product name
+* Category
+* Crop
+* Problem
+* Ingredient
+* Application
+
+Example:
+
+User searches:
+
+"tomato"
+
+Return relevant tomato products and tomato solutions.
+
+Show:
+
+"No products found"
+
+when appropriate.
+
+---
+
+# 13. SMART PRODUCT FINDER
+
+Create a dedicated:
+
+# Find the Right Agricultural Solution
+
+Step 1:
+
+"What crop are you growing?"
+
+Examples:
+
+* Tomato
+* Chilli
+* Cotton
+* Banana
+* Paddy
+* Maize
+* Sugarcane
+* Mango
+* Vegetables
+* Moringa
+
+Step 2:
+
+"What problem are you facing?"
+
+Examples:
+
+* Pest attack
+* Fungal disease
+* Yellow leaves
+* Poor flowering
+* Poor fruit development
+* Root problems
+* Nutrient deficiency
+* Soil health
+* Plant stress
+
+Step 3:
+
+Show matching products.
+
+Important:
+
+This system must use actual product data from the database.
+
+Do not provide medical-style certainty or claim that a product definitely cures a disease.
+
+Display:
+
+"Recommended based on the information provided. Consult an agricultural expert for confirmation."
+
+---
+
+# 14. FARMER HELP CENTER
+
+Make this one of the major website features.
+
+Headline:
+
+"Having a Problem With Your Crop?"
+
+Description:
+
+"Share your crop problem with our support team and get guidance."
+
+Options:
+
+[Upload Crop Photo]
+
+[Ask an Expert]
+
+[Browse Crop Solutions]
+
+---
+
+# 15. CROP DIAGNOSIS
+
+Create a functional crop-help workflow.
+
+Form:
+
+Name
+Mobile
+Email optional
+State
+District
+Crop
+Crop Age
+Problem Description
+Upload Crop Images
+
+Allow:
+
+* JPG
+* PNG
+* WEBP
+
+Maximum reasonable file size.
+
+After submission:
+
+Show:
+
+"Your request has been submitted successfully."
+
+Generate a reference number.
+
+Store the request in the database.
+
+Admin should be able to view it.
+
+Status:
+
+* New
+* Assigned
+* In Review
+* Responded
+* Closed
+
+Do NOT automatically claim that an image has been scientifically diagnosed unless an actual agricultural AI/diagnostic service is integrated.
+
+---
+
+# 16. AGRICULTURE EXPERT SUPPORT
+
+Create a support system.
+
+Farmers can submit questions.
+
+Admin/support staff can respond.
+
+Dashboard should show:
+
+* New questions
+* Pending questions
+* Answered questions
+* Closed questions
+
+Allow support staff to add:
+
+* Text answer
+* Recommended products
+* Attachments
+* Agricultural resources
+
+---
+
+# 17. CROP SOLUTIONS
+
+Create:
+
+# Solutions by Crop
+
+Cards for:
+
+* Tomato
+* Chilli
+* Cotton
+* Banana
+* Paddy
+* Maize
+* Sugarcane
+* Mango
+* Vegetables
+* Moringa
+
+Each crop page:
+
+Hero image
+
+Crop overview
+
+Common challenges
+
+Crop stages
+
+Recommended management approach
+
+Relevant BioNature products
+
+Farmer resources
+
+FAQs
+
+Enquire button
+
+---
+
+# 18. PROBLEM SOLUTIONS
+
+Create:
+
+# Solutions by Problem
+
+Categories:
+
+* Pest Management
+* Disease Management
+* Nutrient Deficiency
+* Soil Health
+* Root Development
+* Flowering
+* Fruit Development
+* Plant Stress
+* Growth Management
+
+Each problem page should connect to appropriate products.
+
+Use real product data.
+
+---
+
+# 19. ABOUT US
+
+Create a premium About page.
+
+Sections:
+
+### Who We Are
+
+Clear company introduction.
+
+### Our Mission
+
+### Our Vision
+
+### Our Values
+
+### Our Journey
+
+Use a timeline.
+
+Do not invent historical dates.
+
+Use only verified company information.
+
+### Manufacturing & Infrastructure
+
+### Research & Development
+
+### Quality
+
+### Farmer Support
+
+### Leadership / Team
+
+If actual team information is available, show it.
+
+---
+
+# 20. INFRASTRUCTURE
+
+Create an impressive infrastructure page.
+
+Sections:
+
+* Manufacturing
+* Laboratory
+* Quality Control
+* R&D
+* Packaging
+* Warehousing
+* Distribution
+
+Use real company images when available.
+
+Add image gallery.
+
+---
+
+# 21. CERTIFICATIONS
+
+Create:
+
+# Quality & Certifications
+
+Display certificates in professional cards.
+
+Each certificate:
+
+* Certificate image
+* Name
+* Issuing organization
+* Certificate number if appropriate
+* Validity if applicable
+* View
+* Download
+
+Do not fabricate certificates.
+
+---
+
+# 22. AWARDS
+
+Create a dedicated awards page.
+
+Display:
+
+* Award image
+* Award name
+* Organization
+* Year
+* Description
+
+Use verified information only.
+
+---
+
+# 23. DISTRIBUTOR PAGE
+
+Create:
+
+# Become a BioNature Distributor
+
+Headline:
+
+"Grow Your Agricultural Business With BioNature"
+
+Sections:
+
+* Why become a distributor
+* Product portfolio
+* Technical support
+* Marketing support
+* Training
+* Business opportunity
+
+Form:
+
+Name
+Company
+Mobile
+Email
+State
+District
+Current Business
+Years in Business
+Interested Product Categories
+Message
+
+Submit.
+
+Store lead in database.
+
+Send email notification to admin.
+
+---
+
+# 24. CONTACT PAGE
+
+Create a professional contact page.
+
+Show:
+
+* Phone
+* Email
+* Address
+* WhatsApp
+* Working hours
+* Google Maps embed
+
+Contact form:
+
+Name
+Mobile
+Email
+Subject
+Enquiry Type
+Message
+
+Enquiry types:
+
+* Product Enquiry
+* Farmer Support
+* Distributor
+* Bulk Order
+* Technical Support
+* General Enquiry
+
+---
+
+# 25. WHATSAPP
+
+Add a floating WhatsApp button.
+
+On product pages:
+
+"Enquire on WhatsApp"
+
+The message should automatically include:
+
+"Hello BioNature, I am interested in [Product Name]."
+
+Do not hard-code a fake phone number.
+
+Put the official WhatsApp number in environment/configuration settings.
+
+---
+
+# 26. BLOG
+
+Create a full CMS-driven blog.
+
+Categories:
+
+* Agriculture
+* Crop Management
+* Organic Farming
+* Bio Fertilizers
+* Bio Pesticides
+* Plant Nutrition
+* Soil Health
+* Farmer Education
+
+Blog listing:
+
+* Featured article
+* Search
+* Categories
+* Pagination
+
+Blog details:
+
+* Title
+* Author
+* Date
+* Featured image
+* Content
+* Related articles
+* Share buttons
+
+---
+
+# 27. RESOURCES
+
+Create a resource library.
+
+Types:
+
+* Product brochures
+* Technical sheets
+* Crop guides
+* Application guides
+* Videos
+* PDFs
+* FAQs
+
+Add search and filters.
+
+---
+
+# 28. GALLERY
+
+Create a beautiful image gallery.
+
+Categories:
+
+* Farmers
+* Products
+* Manufacturing
+* Events
+* Field Demonstrations
+* Team
+* Infrastructure
+
+Add lightbox functionality.
+
+Optimize images for performance.
+
+---
+
+# 29. VIDEOS
+
+Create video library.
+
+Support YouTube/Vimeo embeds.
+
+Categories:
+
+* Product Demonstration
+* Farmer Stories
+* Company
+* Agriculture Education
+* Events
+
+---
+
+# 30. TESTIMONIALS
+
+Create farmer testimonials.
+
+Each testimonial:
+
+* Farmer name
+* Location
+* Crop
+* Photo/video
+* Testimonial
+* Product used if verified
+
+Create carousel on homepage.
+
+Do not create fake testimonials.
+
+---
+
+# 31. ADMIN DASHBOARD
+
+This is extremely important.
+
+Build a complete admin dashboard.
+
+Dashboard sections:
+
+### Overview
+
+Show:
+
+* Total Products
+* Total Enquiries
+* Farmer Help Requests
+* Distributor Leads
+* Blog Posts
+* Downloads
+* Recent Activity
+
+### Product Management
+
+Admin can:
+
+* Add product
+* Edit product
+* Delete product
+* Upload images
+* Add categories
+* Add crops
+* Add problems
+* Add benefits
+* Add documents
+* Manage SEO fields
+* Publish/unpublish
+
+### Category Management
+
+CRUD.
+
+### Crop Management
+
+CRUD.
+
+### Problem Management
+
+CRUD.
+
+### Farmer Help
+
+View requests.
+
+Filter by:
+
+* Status
+* Crop
+* State
+* Date
+
+Assign support staff.
+
+Respond.
+
+### Enquiries
+
+View and manage all enquiries.
+
+Statuses:
+
+* New
+* Contacted
+* In Progress
+* Converted
+* Closed
+
+### Distributor Leads
+
+Manage distributor applications.
+
+### Blog
+
+Full CRUD.
+
+Rich text editor.
+
+SEO fields.
+
+### Certificates
+
+Upload/manage certificates.
+
+### Awards
+
+CRUD.
+
+### Testimonials
+
+CRUD.
+
+### Gallery
+
+Upload/manage images.
+
+### Resources
+
+Upload PDFs and files.
+
+### Users
+
+Admin user management.
+
+---
+
+# 32. DATABASE DESIGN
+
+Create a proper relational database.
+
+Suggested models:
+
+User
+
+Role
+
+Product
+
+ProductCategory
+
+Crop
+
+AgriculturalProblem
+
+ProductCrop
+
+ProductProblem
+
+ProductDocument
+
+ProductImage
+
+Enquiry
+
+FarmerHelpRequest
+
+FarmerHelpAttachment
+
+SupportResponse
+
+DistributorLead
+
+BlogPost
+
+BlogCategory
+
+Certificate
+
+Award
+
+Testimonial
+
+GalleryImage
+
+Resource
+
+Video
+
+ContactMessage
+
+AuditLog
+
+Add:
+
+* IDs
+* timestamps
+* relationships
+* indexes
+* unique constraints
+* appropriate cascading behavior
+
+Use Prisma migrations.
+
+---
+
+# 33. API
+
+Create REST APIs.
+
+Examples:
+
+GET /api/products
+
+GET /api/products/:slug
+
+POST /api/products
+
+PUT /api/products/:id
+
+DELETE /api/products/:id
+
+GET /api/categories
+
+GET /api/crops
+
+GET /api/problems
+
+GET /api/blog
+
+GET /api/blog/:slug
+
+POST /api/enquiries
+
+POST /api/farmer-help
+
+POST /api/distributor
+
+POST /api/contact
+
+Admin APIs should require authentication.
+
+Validate every request.
+
+Return proper HTTP status codes.
+
+---
+
+# 34. SECURITY
+
+Implement:
+
+* Input validation
+* Zod validation
+* SQL injection protection through Prisma
+* XSS protection
+* CSRF protection where applicable
+* Rate limiting
+* Secure authentication
+* Password hashing
+* Secure cookies
+* File type validation
+* File size limits
+* Authorization middleware
+* Admin route protection
+
+Never expose secrets to frontend.
+
+Never commit .env files.
+
+---
+
+# 35. SEO
+
+Every page must have:
+
+* Unique title
+* Meta description
+* Canonical URL
+* Open Graph metadata
+* Twitter metadata
+* Proper H1
+* H2/H3 hierarchy
+* Structured data where relevant
+
+Create:
+
+* sitemap.xml
+* robots.txt
+
+Add JSON-LD for:
+
+* Organization
+* Product
+* Article
+* Breadcrumb
+* FAQ where applicable
+
+Use clean URLs.
+
+Example:
+
+/products
+
+/products/biological-fertilizer
+
+/products/product-name
+
+/solutions
+
+/solutions/crops/tomato
+
+/solutions/problems/nutrient-deficiency
+
+/blog
+
+/blog/article-name
+
+---
+
+# 36. PERFORMANCE
+
+The site must be fast.
+
+Implement:
+
+* Lazy loading
+* Responsive images
+* WebP/AVIF where appropriate
+* Code splitting
+* Route-level lazy loading
+* Minification
+* Caching
+* Efficient API calls
+* Pagination
+* Database indexes
+
+Avoid unnecessary dependencies.
+
+Target excellent Lighthouse scores.
+
+---
+
+# 37. ACCESSIBILITY
+
+Follow WCAG principles.
+
+Implement:
+
+* Keyboard navigation
+* Proper labels
+* Alt text
+* Focus states
+* Accessible buttons
+* Accessible modals
+* Semantic HTML
+* Color contrast
+* Screen-reader-friendly forms
+
+---
+
+# 38. ERROR HANDLING
+
+Every API request must handle errors properly.
+
+Frontend should show:
+
+* Loading states
+* Empty states
+* Error states
+* Success messages
+
+Example:
+
+"Something went wrong. Please try again."
+
+Forms should display field-level validation.
+
+---
+
+# 39. TOAST NOTIFICATIONS
+
+Use clean toast notifications.
+
+Examples:
+
+"Product added successfully."
+
+"Your enquiry has been submitted."
+
+"Your farmer support request has been received."
+
+"Certificate uploaded successfully."
+
+---
+
+# 40. SEARCH
+
+Implement global search.
+
+Search across:
+
+* Products
+* Crops
+* Problems
+* Blog
+* Resources
+
+Create:
+
+/search?q=tomato
+
+Show grouped results.
+
+---
+
+# 41. ANALYTICS
+
+Create an analytics-ready structure.
+
+Support Google Analytics 4 or another analytics platform through environment configuration.
+
+Track:
+
+* Product views
+* Product enquiries
+* WhatsApp clicks
+* Contact submissions
+* Distributor applications
+* Farmer help submissions
+* Downloads
+* Blog views
+
+Do not hard-code tracking IDs.
+
+---
+
+# 42. COOKIE / PRIVACY
+
+Add a privacy-conscious cookie consent system if analytics/cookies require it.
+
+Include:
+
+Privacy Policy
+
+Terms & Conditions
+
+Disclaimer
+
+---
+
+# 43. FOOTER
+
+Professional footer:
+
+BioNature logo
+
+Short company description.
+
+Products
+
+Solutions
+
+Farmer Help
+
+Company
+
+Resources
+
+Business
+
+Contact
+
+Social media links
+
+Privacy Policy
+
+Terms
+
+Copyright
+
+Do not invent social-media URLs.
+
+---
+
+# 44. 404 PAGE
+
+Create a custom 404 page.
+
+Message:
+
+"Looks like this field has gone missing."
+
+Buttons:
+
+[Go Home]
+
+[Explore Products]
+
+[Get Farmer Help]
+
+---
+
+# 45. ANIMATIONS
+
+Use subtle animations.
+
+Examples:
+
+* Fade in
+* Slide up
+* Image reveal
+* Card hover
+* Button hover
+* Number counters
+
+Use Framer Motion only where useful.
+
+Do not make the website feel slow.
+
+Respect prefers-reduced-motion.
+
+---
+
+# 46. CONTENT RULE
+
+IMPORTANT:
+
+Do not invent company facts.
+
+Do not invent:
+
+* Products
+* Certifications
+* Awards
+* Employees
+* Addresses
+* Phone numbers
+* Statistics
+* Manufacturing capabilities
+* Claims
+* Product dosage
+* Product ingredients
+* Farmer testimonials
+
+Use information from the existing BioNature website or clearly marked placeholders until verified.
+
+Where information is unavailable, use:
+
+"[Content to be provided by BioNature]"
+
+instead of creating fake information.
+
+---
+
+# 47. PRODUCT DATA
+
+Initially import the existing BioNature product information into seed data.
+
+Create a seed script.
+
+Example structure:
+
+{
+name,
+slug,
+category,
+shortDescription,
+description,
+benefits,
+crops,
+problems,
+ingredients,
+applicationMethod,
+dosage,
+packSizes,
+images,
+documents,
+published
+}
+
+Only populate fields when information is verified.
+
+---
+
+# 48. UI COMPONENT SYSTEM
+
+Create reusable components.
+
+Examples:
+
+Header
+
+Footer
+
+Button
+
+Container
+
+SectionHeading
+
+ProductCard
+
+ProductGrid
+
+CategoryCard
+
+CropCard
+
+ProblemCard
+
+TestimonialCard
+
+BlogCard
+
+ResourceCard
+
+CertificateCard
+
+AwardCard
+
+EnquiryForm
+
+FarmerHelpForm
+
+DistributorForm
+
+SearchBar
+
+FilterPanel
+
+Modal
+
+Toast
+
+Breadcrumbs
+
+Pagination
+
+FileUploader
+
+ImageGallery
+
+LoadingSkeleton
+
+EmptyState
+
+ErrorState
+
+---
+
+# 49. PROJECT STRUCTURE
+
+Use a clean architecture.
+
+Example:
+
+src/
+
+components/
+
+pages/
+
+layouts/
+
+features/
+
+hooks/
+
+lib/
+
+services/
+
+types/
+
+utils/
+
+assets/
+
+styles/
+
+routes/
+
+server/
+
+database/
+
+prisma/
+
+tests/
+
+Keep business logic separate from UI.
+
+Do not put the entire application into App.tsx.
+
+---
+
+# 50. TESTING
+
+Add tests.
+
+Frontend:
+
+* Component tests
+* Form validation tests
+
+Backend:
+
+* API tests
+* Authentication tests
+* Product CRUD tests
+
+E2E:
+
+* Product search
+* Product enquiry
+* Farmer Help submission
+* Distributor application
+* Admin login
+* Admin product creation
+
+---
+
+# 51. README
+
+Create a complete README containing:
+
+* Project overview
+* Technology stack
+* Installation
+* Environment variables
+* Database setup
+* Prisma migration
+* Seed database
+* Development
+* Production build
+* Deployment
+* Admin login setup
+* File storage setup
+* Email setup
+
+---
+
+# 52. ENVIRONMENT VARIABLES
+
+Create:
+
+.env.example
+
+Include placeholders such as:
+
+DATABASE_URL=
+
+JWT_SECRET=
+
+SESSION_SECRET=
+
+EMAIL_HOST=
+
+EMAIL_PORT=
+
+EMAIL_USER=
+
+EMAIL_PASSWORD=
+
+EMAIL_FROM=
+
+WHATSAPP_NUMBER=
+
+GOOGLE_MAPS_API_KEY=
+
+ANALYTICS_ID=
+
+STORAGE_BUCKET=
+
+STORAGE_ACCESS_KEY=
+
+STORAGE_SECRET_KEY=
+
+Never expose server secrets through VITE_ variables.
+
+---
+
+# 53. DEVELOPMENT REQUIREMENT
+
+Do not stop after generating the UI.
+
+Actually implement:
+
+1. Frontend
+2. Backend
+3. Database
+4. API
+5. Authentication
+6. Admin dashboard
+7. Forms
+8. File upload
+9. Search
+10. Filtering
+11. Product management
+12. Farmer Help workflow
+13. Distributor workflow
+14. Blog CMS
+15. SEO
+16. Error handling
+17. Validation
+18. Responsive design
+19. Tests
+
+The application must run locally.
+
+---
+
+# 54. QUALITY STANDARD
+
+Before considering the project complete, verify:
+
+* npm install works
+* npm run dev works
+* npm run build works
+* Backend starts successfully
+* Database migrations work
+* Seed script works
+* Admin login works
+* Products load
+* Product search works
+* Product filters work
+* Product details work
+* Enquiry forms work
+* Farmer Help works
+* File uploads work
+* Distributor form works
+* Blog works
+* Admin CRUD works
+* Mobile navigation works
+* All links work
+* No broken images
+* No console errors
+* No obvious TypeScript errors
+* No fake production data
+* No exposed secrets
+* 404 page works
+
+---
+
+# 55. FINAL DESIGN GOAL
+
+The finished website should feel like a **premium modern agricultural technology company**, not a basic fertilizer-company website.
+
+The user experience should communicate:
+
+"BioNature understands agriculture."
+
+"BioNature has professional products."
+
+"BioNature supports farmers."
+
+"BioNature is trustworthy."
+
+"BioNature is easy to contact."
+
+The website should prioritize **business conversion + farmer usability + brand credibility + SEO**.
+
+Build the project as if it will be deployed to production and used by real customers.
+
+Do not provide only a design prototype.
+
+Build the complete working application.
