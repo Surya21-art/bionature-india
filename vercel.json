@@ -1,0 +1,10 @@
+{
+  "framework": "vite",
+  "installCommand": "pnpm install --frozen-lockfile",
+  "buildCommand": "pnpm --filter @workspace/bionature-india build",
+  "outputDirectory": "artifacts/bionature-india/dist/public",
+  "rewrites": [{
+    "source": "/(.*)",
+    "destination": "/index.html"
+  }]
+}
