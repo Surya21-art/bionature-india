@@ -1,0 +1,24 @@
+kind = "web"
+previewPath = "/"
+title = "BioNature India"
+description = "A premium, responsive agricultural solutions website for BioNature India with product discovery, farmer support, crop guidance, and enquiry workflows."
+version = "1.0.0"
+id = "artifacts/bionature-india"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 26149
+
+[services.development]
+run = "pnpm --filter @workspace/bionature-india run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/bionature-india", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/bionature-india/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
