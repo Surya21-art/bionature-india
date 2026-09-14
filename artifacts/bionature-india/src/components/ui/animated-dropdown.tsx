@@ -80,7 +80,13 @@ export const AnimatedDropdown: React.FC<AnimatedDropdownProps> = ({
   };
 
   return (
-    <div className={`relative ${className}`}>
+    <div
+      className={`relative ${className}`}
+      onMouseLeave={() => {
+        setIsOpen(false);
+        setHoveredIndex(null);
+      }}
+    >
       {/* Trigger Button */}
       <motion.button
         className={`flex items-center gap-1 px-3 py-2 rounded-lg hover:text-emerald-700 hover:bg-emerald-50/70 transition-all duration-200 outline-none ${
@@ -104,7 +110,7 @@ export const AnimatedDropdown: React.FC<AnimatedDropdownProps> = ({
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className={`absolute top-full mt-2 ${getAlignmentClass()} z-50`}
+            className={`absolute top-full ${getAlignmentClass()} z-50`}
             onMouseLeave={() => setIsOpen(false)}
             variants={dropdownVariants}
             initial="hidden"

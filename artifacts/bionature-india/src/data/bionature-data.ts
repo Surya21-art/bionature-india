@@ -308,10 +308,74 @@ export const PRODUCTS: Product[] = [
   },
 ];
 
-// CROPS, PROBLEMS, TESTIMONIALS, BLOG_POSTS, CERTIFICATIONS, AWARDS - Temporarily empty
-// These will be populated once verified information is obtained from BioNature
-export const CROPS: Crop[] = [];
-export const PROBLEMS: Problem[] = [];
+// Build the crop picker from the crops already covered by the product catalog.
+// This keeps the finder useful until crop-specific editorial content is available.
+const catalogCropNames = Array.from(new Set(PRODUCTS.flatMap((product) => product.suitableCrops)));
+const cropImages: Record<string, string> = {
+  Rice: "https://images.unsplash.com/photo-1536304993881-ff6e9eabf6a6?w=1200&auto=format&fit=crop&q=85",
+  Wheat: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&auto=format&fit=crop&q=80",
+  Maize: "https://images.unsplash.com/photo-1551754655-cd27e38d2076?w=800&auto=format&fit=crop&q=80",
+  Cotton: "https://images.unsplash.com/photo-1598449356475-b9f71db7d847?w=1200&auto=format&fit=crop&q=85",
+  Tomato: "https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=800&auto=format&fit=crop&q=80",
+  Potato: "https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=800&auto=format&fit=crop&q=80",
+  Grape: "https://images.unsplash.com/photo-1537640538966-79f369143f8f?w=800&auto=format&fit=crop&q=80",
+  Apple: "https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=800&auto=format&fit=crop&q=80",
+  Banana: "https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?w=800&auto=format&fit=crop&q=80",
+  Coconut: "https://images.unsplash.com/photo-1550828520-4cb496926fc9?w=800&auto=format&fit=crop&q=80",
+  Sugarcane: "https://images.unsplash.com/photo-1589923188900-85dae523342b?w=1200&auto=format&fit=crop&q=85",
+  Onion: "https://images.unsplash.com/photo-1508747703725-719777637510?w=800&auto=format&fit=crop&q=80",
+  Chilli: "https://images.unsplash.com/photo-1588252303782-cb80119amee?w=1200&auto=format&fit=crop&q=85",
+  Brinjal: "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=800&auto=format&fit=crop&q=80",
+  Okra: "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=800&auto=format&fit=crop&q=80",
+  Cucumber: "https://images.unsplash.com/photo-1449300079323-02e209d9d3a6?w=800&auto=format&fit=crop&q=80",
+  Watermelon: "https://images.unsplash.com/photo-1563114773-84221bd62daa?w=800&auto=format&fit=crop&q=80",
+  Mango: "https://images.unsplash.com/photo-1553279768-865429fa0078?w=800&auto=format&fit=crop&q=80",
+  Citrus: "https://images.unsplash.com/photo-1557800636-894a64c1696f?w=800&auto=format&fit=crop&q=80",
+  Groundnut: "https://images.unsplash.com/photo-1567892737950-30c4db37cd89?w=800&auto=format&fit=crop&q=80",
+  Soybean: "https://images.unsplash.com/photo-1612257416648-ee7a4e9c47e5?w=1200&auto=format&fit=crop&q=85",
+  Sunflower: "https://images.unsplash.com/photo-1470509037663-253afd7f0f51?w=800&auto=format&fit=crop&q=80",
+  Tea: "https://images.unsplash.com/photo-1594631252845-29fc4cc8cde9?w=1200&auto=format&fit=crop&q=85",
+  Millets: "https://images.unsplash.com/photo-1515543904379-3d757a7d7f5b?w=1200&auto=format&fit=crop&q=85",
+  Pulses: "https://images.unsplash.com/photo-1515543904379-3d757a7d7f5b?w=800&auto=format&fit=crop&q=80",
+  Vegetables: "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=800&auto=format&fit=crop&q=80",
+};
+
+export const CROPS: Crop[] = catalogCropNames.map((cropName, index) => {
+  const matchingProducts = PRODUCTS.filter((product) => product.suitableCrops.includes(cropName));
+  const cropProblems = Array.from(new Set(matchingProducts.flatMap((product) => product.targetProblems))).slice(0, 4);
+
+  return {
+    id: `crop-${index + 1}`,
+    name: cropName,
+    slug: cropName.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, ""),
+    scientificName: "Agricultural crop",
+    description: `Biological nutrition and crop protection recommendations for ${cropName}.`,
+    image: cropImages[cropName] || matchingProducts[0]?.images[0] || "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&auto=format&fit=crop&q=80",
+    commonProblems: cropProblems,
+    recommendedProducts: matchingProducts.map((product) => product.slug),
+    stages: [],
+  };
+});
+
+const catalogProblemNames = Array.from(new Set(PRODUCTS.flatMap((product) => product.targetProblems)));
+
+export const PROBLEMS: Problem[] = catalogProblemNames.map((problemName, index) => {
+  const matchingProducts = PRODUCTS.filter((product) => product.targetProblems.includes(problemName));
+
+  return {
+    id: `problem-${index + 1}`,
+    name: problemName,
+    slug: problemName.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, ""),
+    category: "Crop health",
+    description: `Biological treatment options for ${problemName.toLowerCase()}.`,
+    symptoms: [problemName],
+    causes: [],
+    management: "Select a recommended product for application guidance.",
+    recommendedProducts: matchingProducts.map((product) => product.slug),
+    image: matchingProducts[0]?.images[0] || "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&auto=format&fit=crop&q=80",
+  };
+});
+
 export const TESTIMONIALS: Testimonial[] = [];
 export const BLOG_POSTS: BlogPost[] = [];
 export const CERTIFICATIONS: Certificate[] = [];

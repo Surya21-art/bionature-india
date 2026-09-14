@@ -105,7 +105,7 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
 
   return (
     <Dialog open={open} onOpenChange={handleClose}>
-      <DialogContent className="max-w-lg p-6 max-h-[90vh] overflow-y-auto">
+      <DialogContent className="max-w-lg p-6 max-h-[90vh] overflow-y-auto bg-white text-slate-900 shadow-2xl">
         <DialogHeader>
           <DialogTitle className="text-xl font-bold text-slate-900 flex items-center gap-2">
             <Sprout className="w-5 h-5 text-emerald-600" />
@@ -167,7 +167,7 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
                 <select
                   id="enq-type"
                   {...register("enquiryType")}
-                  className="w-full h-9 rounded-md border border-input bg-background px-3 py-1 text-sm shadow-sm focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+                  className="w-full h-9 rounded-md border border-slate-300 bg-white text-slate-900 px-3 py-1 text-sm shadow-sm focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-emerald-500"
                 >
                   <option value="Product Enquiry">Product Enquiry</option>
                   <option value="Farmer Support & Dosage">Farmer Support & Dosage</option>
@@ -187,7 +187,7 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
                 <select
                   id="enq-state"
                   {...register("state")}
-                  className="w-full h-9 rounded-md border border-input bg-background px-3 py-1 text-sm shadow-sm focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+                  className="w-full h-9 rounded-md border border-slate-300 bg-white text-slate-900 px-3 py-1 text-sm shadow-sm focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-emerald-500"
                 >
                   <option value="">Select State</option>
                   {INDIAN_STATES.map((s) => (

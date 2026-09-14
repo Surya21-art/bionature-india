@@ -58,12 +58,19 @@ export const GlobalSearchDialog: React.FC<GlobalSearchDialogProps> = ({ open, on
     setLocation(url);
   };
 
+  const handleSubmit = (event: React.FormEvent) => {
+    event.preventDefault();
+    if (q) {
+      handleSelect(`/search?q=${encodeURIComponent(query.trim())}`);
+    }
+  };
+
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-2xl p-0 overflow-hidden border-emerald-200">
+      <DialogContent className="max-w-2xl p-0 overflow-hidden bg-white text-slate-900 border-emerald-200 shadow-2xl">
         <DialogTitle className="sr-only">Search BioNature India</DialogTitle>
         {/* Search Input Bar */}
-        <div className="flex items-center px-4 py-3 border-b border-slate-100 bg-slate-50/50">
+        <form onSubmit={handleSubmit} className="flex items-center px-4 py-3 border-b border-slate-100 bg-slate-50/50">
           <Search className="w-5 h-5 text-emerald-600 shrink-0 mr-3" />
           <input
             type="text"
@@ -78,7 +85,7 @@ export const GlobalSearchDialog: React.FC<GlobalSearchDialogProps> = ({ open, on
               <X className="w-4 h-4" />
             </button>
           )}
-        </div>
+        </form>
 
         {/* Results Container */}
         <div className="max-h-[60vh] overflow-y-auto p-4 space-y-4">

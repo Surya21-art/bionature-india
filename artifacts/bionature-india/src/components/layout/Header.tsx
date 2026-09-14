@@ -32,7 +32,6 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSearch, onOpenEnquiry }) =
   const { scrollY } = useScroll();
 
   // Transform header based on scroll
-  const headerOpacity = useTransform(scrollY, [0, 100], [0.95, 1]);
   const headerBlur = useTransform(scrollY, [0, 100], [8, 20]);
   const headerScale = useTransform(scrollY, [0, 100], [1, 0.98]);
 
@@ -80,18 +79,17 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSearch, onOpenEnquiry }) =
 
       {/* Main Sticky Header */}
       <motion.header
-        className={`sticky top-0 z-40 w-full transition-all duration-300 bg-white/95 backdrop-blur-md border-b border-emerald-100 ${
+        className={`sticky top-0 z-40 w-full transition-all duration-300 bg-white backdrop-blur-md border-b border-emerald-100 ${
           isScrolled ? "py-2.5 shadow-md" : "py-3.5 shadow-sm"
         }`}
         style={{
-          opacity: headerOpacity,
           backdropFilter: `blur(${headerBlur}px)`,
           scale: headerScale,
         }}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-end sm:justify-between gap-4">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group">
+          <Link href="/" className="hidden sm:flex items-center gap-3 group shrink-0">
             {/* Official BioNature Logo with 3D Animation */}
             <motion.div
               className="relative"
@@ -395,13 +393,10 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSearch, onOpenEnquiry }) =
             {/* Search Trigger */}
             <button
               onClick={onOpenSearch}
-              className="p-2 text-slate-600 hover:text-emerald-700 hover:bg-emerald-50 rounded-lg transition-colors flex items-center gap-1.5"
-              title="Search products, crops, and guides (Ctrl+K)"
+              className="p-2 text-emerald-800 bg-emerald-50 border border-emerald-200 hover:text-emerald-900 hover:bg-emerald-100 rounded-lg transition-colors flex items-center gap-1.5 opacity-100"
+              title="Search products, crops, and guides"
             >
               <Search className="w-4 h-4" />
-              <span className="hidden xl:inline text-xs text-slate-400 bg-slate-100 border px-1.5 py-0.5 rounded">
-                Ctrl K
-              </span>
             </button>
 
             {/* WhatsApp CTA */}
@@ -420,7 +415,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSearch, onOpenEnquiry }) =
             {/* Enquire Now CTA */}
             <Button
               onClick={() => onOpenEnquiry()}
-              className="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs sm:text-sm px-3.5 sm:px-4 py-2 rounded-lg shadow-sm shadow-emerald-700/20"
+              className="bg-emerald-600 hover:bg-emerald-700 text-white border border-emerald-700 font-semibold text-xs sm:text-sm px-3.5 sm:px-4 py-2 rounded-lg shadow-sm shadow-emerald-700/20 opacity-100"
             >
               Enquire Now
             </Button>

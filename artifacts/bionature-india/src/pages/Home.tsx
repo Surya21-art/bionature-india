@@ -30,7 +30,7 @@ import { Button } from "@/components/ui/button";
 import { ProductCard } from "@/components/products/ProductCard";
 import { SmartProductFinder } from "@/components/solutions/SmartProductFinder";
 import { Hero3D } from "@/components/sections/Hero3D";
-import { ScrollReveal, Parallax, FloatingElement } from "@/components/common/PageTransition";
+import { ScrollReveal, FloatingElement } from "@/components/common/PageTransition";
 
 interface HomeProps {
   onEnquire: (product?: Product) => void;
@@ -167,9 +167,7 @@ export const Home: React.FC<HomeProps> = ({ onEnquire }) => {
       {/* 4. SMART SOLUTION FINDER (WIZARD) */}
       <ScrollReveal delay={0.3}>
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Parallax speed={0.1}>
-            <SmartProductFinder onEnquire={onEnquire} />
-          </Parallax>
+          <SmartProductFinder onEnquire={onEnquire} />
         </section>
       </ScrollReveal>
 
